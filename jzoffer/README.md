@@ -1,6 +1,6 @@
 ## 剑指offer题目(Java语言实现)
 
-#### Ques1
+#### [Ques1](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques1/src/Solution.java)
 
 ```
 /**
@@ -17,7 +17,7 @@
  */
 ```
 
-#### Ques2
+#### [Ques2](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques2/src/Solution.java)
 
 ```
 /**
@@ -30,7 +30,7 @@
  */
 ```
 
-#### Ques3
+#### [Ques3](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques3/src/Solution.java)
 
 ```
 /**
@@ -52,7 +52,7 @@
 */
 ```
 
-#### Ques4
+#### [Ques4](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques4/src/Solution.java)
 
 ```
 /**
@@ -78,7 +78,7 @@
  */
 ```
 
-#### Ques5
+#### [Ques5](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques5/src/Solution.java)
 
 ```
 /**
@@ -92,7 +92,7 @@
  */
 ```
 
-#### Ques6
+#### [Ques6](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques6/src/Solution.java)
 
 ```
 /**
@@ -101,7 +101,7 @@
  * 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。
  * 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。
  * NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
- * 
+ *
  * 解题思路
  * 方法一:遍历数组,找到数组中的最小值,此时复杂度为n
  * 方法二:旋转后的数组在整体看来是两个有序数组,
