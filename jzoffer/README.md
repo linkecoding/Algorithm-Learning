@@ -114,3 +114,20 @@
  *       (3)为了处理[1 0 1 1 1]这种array[index1] = array[index2] = array[midIndex]的情况,需要进行遍历扫描
  */
 ```
+
+#### [Ques7](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques7/src/Solution.java)
+
+```
+/**
+ * 题目描述
+ * 大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项。
+ * n <= 39
+ *
+ * 解题思路
+ * 斐波那契数列的规律:1 1 2 3 5 8 13 ....
+ * 第三个数 = 前两个数之和
+ *
+ * 方法一:按照递推公式进行循环,直到循环到第n个数,退出循环并返回
+ * 方法二:使用递归,但是存在堆栈溢出的问题
+ */
+```
