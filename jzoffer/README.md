@@ -215,3 +215,22 @@
  * n&(n-1) = 1000   1000与1100相比较正好是最右边的1消失了,所以可以使用n&(n-1)来通过位运算统计一个数的二进制表示中1的个数
  */
 ```
+
+#### [Ques12](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques12/src/Solution.java)
+
+```
+/**
+ * 题目描述
+ * 给定一个double类型的浮点数base和int类型的整数exponent。
+ * 求base的exponent次方。
+ *
+ * 解题思路:
+ * 方法一:对于base和exponent要分情况考虑
+ *       对于base == 0时, 0^0没有意义,当base == 0且exponent < 0时会出现除数为0的情况
+ *       对于exponent分为大于0,等于0和小于0,然后使用循环计算他们的乘方
+ * 方法二:除了方法一的分情况讨论之外,我们可以对一个数求乘方进行优化
+ *       当n为偶数时,a^n = a^(n/2) * a^(n/2)
+ *       当n为奇数时,a^n = a^((n-1)/2) * a^((n-1)/2) * a
+ *       例如:81 = 9^2 = ((3^2))^2,所以可以通过递归实现求幂次方
+ */
+```
