@@ -278,3 +278,28 @@
  * 所以我们刚开始让fast指针先走k-1步,便于我们构造出这样一个间隔
  */
 ```
+
+#### [Ques15](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques15/src/Solution.java)
+
+```
+/**
+ * public class ListNode {
+ *     int val;
+ *     ListNode next = null;
+ *     ListNode(int val) {
+ *         this.val = val;
+ *     }
+ * }
+ *
+ * 题目描述
+ * 输入两个单调递增的链表，输出两个链表合成后的链表，
+ * 当然我们需要合成后的链表满足单调不减规则。
+ *
+ * 解题思路
+ * 该题目首先注意对空链表异常情况的处理
+ * 然后用head节点作为最终链表的头节点(该节点不要变化,最终返回)
+ * 使用phead作为移动节点,使用head1和head2分别指向需要合并的两个链表当前需要处理的节点,
+ * 依次比较两个链表节点的值,直到有一个指针的next为空,此时需要判断是否是有一个链表处理完成还有一个链表的节点没有处理完成
+ * 然后将没有处理完成的链表剩余节点接在最终链表的最后面即可
+ */
+```
