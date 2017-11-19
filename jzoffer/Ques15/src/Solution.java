@@ -12,13 +12,20 @@
  * 当然我们需要合成后的链表满足单调不减规则。
  *
  * 解题思路
- * 该题目首先注意对空链表异常情况的处理
- * 然后用head节点作为最终链表的头节点(该节点不要变化,最终返回)
- * 使用phead作为移动节点,使用head1和head2分别指向需要合并的两个链表当前需要处理的节点,
- * 依次比较两个链表节点的值,直到有一个指针的next为空,此时需要判断是否是有一个链表处理完成还有一个链表的节点没有处理完成
- * 然后将没有处理完成的链表剩余节点接在最终链表的最后面即可
+ * 方法一:该题目首先注意对空链表异常情况的处理
+ *       然后用head节点作为最终链表的头节点(该节点不要变化,最终返回)
+ *       使用phead作为移动节点,使用head1和head2分别指向需要合并的两个链表当前需要处理的节点,
+ *       依次比较两个链表节点的值,直到有一个指针的next为空,此时需要判断是否是有一个链表处理完成还有一个链表的节点没有处理完成
+ *       然后将没有处理完成的链表剩余节点接在最终链表的最后面即可
+ *
+ * 方法二:我们可以使用递归
+ *       当我们链表一的头节点的值小于链表二的头节点的值,那么合并之后的链表头节点就是链表一的头节点,反之亦然
+ *       当这一步完成后,头节点的下一个节点就会成为新的头节点,我们可以继续递归处理,将每次比较产生的较小的头节点接在合并链表之后即可
+ *       当其中一个较短的链表已经比较完成时,我们就可将较长链表的剩余部分接在合并链表的最后面即可
  */
 public class Solution {
+
+    //方法一
     public ListNode Merge(ListNode list1, ListNode list2) {
         //异常情况判断
         if (list1 == null && list2 == null){
@@ -64,6 +71,23 @@ public class Solution {
         return head;
     }
 
+    //方法二
+    public ListNode Merge2(ListNode list1, ListNode list2) {
+        if (list1 == null){
+            return list2;
+        }else if (list2 == null){
+            return list1;
+        }
+        ListNode mergeHead = null;
+        if (list1.val < list2.val){
+            mergeHead = list1;
+            mergeHead.next = Merge2(list1.next, list2);
+        }else{
+            mergeHead = list2;
+            mergeHead.next = Merge2(list1, list2.next);
+        }
+        return mergeHead;
+    }
     public static void main(String[] args) {
         ListNode head1 = new ListNode(1);
         ListNode head2 = new ListNode(2);
