@@ -33,11 +33,11 @@ public class Solution {
             }
             if (!result) {
                 //在左子树上继续寻找和B树根节点相同的节点
-                return HasSubtree(root1.left, root2);
+                result = HasSubtree(root1.left, root2);
             }
             if (!result) {
                 //在右子树上继续寻找和B树根节点相同的节点
-                return HasSubtree(root1.right, root2);
+                result = HasSubtree(root1.right, root2);
             }
         }
         return result;
@@ -45,9 +45,11 @@ public class Solution {
 
     //判断A树中以R为根节点的子树是不是和B树结构相同
     private boolean doesTree1HaveTree2(TreeNode root1, TreeNode root2) {
+        //如果树B已经遍历结束,那就是A树中存在子树与B一一对应
         if (root2 == null) {
             return true;
         }
+        //B树还没有遍历完,A树已经遍历完了,说明A树中不存在B树的子结构
         if (root1 == null) {
             return false;
         }
@@ -57,29 +59,5 @@ public class Solution {
         }
         //递归比较两棵树的左右子树
         return doesTree1HaveTree2(root1.left, root2.left) && doesTree1HaveTree2(root1.right, root2.right);
-    }
-
-    private static TreeNode createTree(String[] array, int index) {
-        TreeNode treeNode = null;
-        if (index < array.length) {
-            if (array[index].equals("#")) {
-                treeNode = null;
-                index++;
-            } else {
-                treeNode = new TreeNode(Integer.parseInt(array[index++]));
-                treeNode.left = createTree(array, index);
-                treeNode.right = createTree(array, index);
-            }
-        }
-        return treeNode;
-    }
-
-    public static void main(String[] args) {
-        String[] array1 = {"8", "8", "7", "9", "2", "#", "#", "#", "#", "4", "7"};
-        String[] array2 = {"8", "9", "2"};
-        TreeNode tree1 = createTree(array1, 0);
-        TreeNode tree2 = createTree(array2, 0);
-        System.out.println(new Solution().HasSubtree(tree1, tree2));
-
     }
 }

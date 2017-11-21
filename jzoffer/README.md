@@ -308,3 +308,31 @@
  *       当其中一个较短的链表已经比较完成时,我们就可将较长链表的剩余部分接在合并链表的最后面即可
  */
 ```
+
+#### [Ques16](https://github.com/codekongs/Algorithm-Learning/blob/master/jzoffer/Ques16/src/Solution.java)
+
+```
+/**
+ * public class TreeNode {
+ *     int val = 0;
+ *     TreeNode left = null;
+ *     TreeNode right = null;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *     }
+ * }
+ *
+ * 题目描述
+ * 输入两棵二叉树A，B，判断B是不是A的子结构。
+ * （ps：我们约定空树不是任意一个树的子结构）
+ *
+ * 解题思路
+ * 首先我们需要在A树中找到和B树的根节点值相同的节点R
+ * 然后我们比较以R为根节点的子树和B树是不是结构相同(比较两个树的左右子树)
+ * 如果两棵子树节点值不相同,则需要继续在A树中找下一个和B树根节点相同的节点Rn
+ * 然后继续上面的比较
+ * 整个过程需要分为两步:
+ * 一、遍历A树找到和B树根节点相同的节点(递归遍历比较)
+ * 二、比较找到的两颗子树是不是相同的(递归遍历比较)
+ */
+```
